@@ -1,0 +1,26 @@
+/* Write your CSS here */
+.delete-btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+.header1 {
+  list-style-type: none;
+}
+.header-cell1 {
+  display: flex;
+  padding-left: 20px;
+  justify-content: space-between;
+  padding-right: 20px;
+  font-size: 18px;
+  height: 40px;
+  align-items: center;
+}
+.separator1 {
+  width: 100%;
+  border: 1px solid #d7dfe9;
+}
+.d-img {
+  width: 20px;
+}

@@ -1,0 +1,62 @@
+/* Write your CSS here */
+.container-2 {
+  width: 70vw;
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+}
+.balance-container {
+  display: flex;
+  align-items: center;
+  background-color: #ecfccb;
+  border: 1.5px solid #84cc16;
+  padding: 15px;
+  border-radius: 20px;
+  padding-right: 35px;
+  margin-bottom: 25px;
+}
+
+.income-container {
+  display: flex;
+  align-items: center;
+  background-color: #cffafe;
+  border: 1.5px solid #06b6d4;
+  padding: 15px;
+  border-radius: 20px;
+  padding-right: 35px;
+  margin-bottom: 25px;
+}
+.expenses-container {
+  display: flex;
+  align-items: center;
+  background-color: #ede9fe;
+  border: 1.5px solid #7c3aed;
+  padding: 15px;
+  border-radius: 20px;
+  padding-right: 35px;
+  margin-bottom: 25px;
+}
+
+.image {
+  width: 70px;
+  margin-right: 20px;
+  margin-left: 15px;
+}
+
+.text-in-cont {
+  font-size: 16px;
+  color: #475569;
+  margin-bottom: 5px;
+}
+.money-in-cont {
+  font-size: 26px;
+  color: #475569;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 767px) {
+  .container-2 {
+    display: flex;
+    flex-direction: column;
+  }
+}

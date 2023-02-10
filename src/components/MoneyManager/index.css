@@ -1,0 +1,124 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  font-family: 'Roboto';
+}
+.container-1 {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/money-manager/money-manager-bg.png');
+  background-size: cover;
+  width: 70vw;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .container-3 {
+    display: flex;
+    flex-direction: column;
+  }
+  .history {
+    margin-top: 20px;
+    width: 500px;
+  }
+}
+.span-text {
+  color: #0b69ff;
+  font-weight: 700;
+  font-size: 20px;
+}
+.heading {
+  color: #475569;
+}
+.descript {
+  font-size: 20px;
+  color: #475569;
+}
+
+.container-3 {
+  display: flex;
+  justify-content: space-between;
+  width: 70vw;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+}
+.add-transaction {
+  border: 1.5px solid #d7dfe9;
+  padding-left: 40px;
+  padding-right: 30px;
+  border-radius: 13px;
+  padding-top: 25px;
+  padding-bottom: 50px;
+}
+.transaction-title {
+  color: #1e293b;
+  font-weight: 500;
+  font-size: 23px;
+}
+.text-trans {
+  color: #334155;
+  font-size: 14px;
+}
+.input-size {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  height: 45px;
+  width: 100%;
+  padding-left: 10px;
+  border: 1.5px solid #d7dfe9;
+  border-radius: 3px;
+  outline: none;
+}
+.add-btn {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: #0b69ff;
+  color: #ffffff;
+  font-family: 'Roboto';
+  width: 70px;
+  height: 40px;
+  border-radius: 7px;
+  font-size: 15px;
+}
+.history {
+  border: 1.5px solid #d7dfe9;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 13px;
+  padding-top: 25px;
+  padding-bottom: 50px;
+  width: 50%;
+}
+.history-text {
+  color: #1e293b;
+  font-weight: 500;
+  font-size: 23px;
+}
+.box {
+  padding-left: 0px;
+  border: 1.5px solid #d7dfe9;
+  border-bottom: none;
+}
+.header {
+  list-style-type: none;
+}
+.separator {
+  width: 100%;
+  border: 1px solid #d7dfe9;
+}
+.header-cell {
+  display: flex;
+  padding-left: 20px;
+  justify-content: space-between;
+  padding-right: 120px;
+  font-size: 18px;
+  font-weight: 500;
+  height: 40px;
+  align-items: center;
+}
