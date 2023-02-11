@@ -23,8 +23,8 @@ class MoneyManager extends Component {
   state = {
     titleInput: '',
     amountInput: '',
-    typeChoosen: 'Income',
-    moneyHistoryList: [],
+    typeChoosen: 'INCOME',
+    transactionsList: [],
   }
 
   onAdd = event => {
@@ -32,24 +32,24 @@ class MoneyManager extends Component {
     const {titleInput, amountInput, typeChoosen} = this.state
     const newHistory = {
       id: v4(),
-      amount: amountInput,
+      amount: parseInt(amountInput),
       title: titleInput,
       type: typeChoosen,
     }
     this.setState(prevState => ({
-      moneyHistoryList: [...prevState.moneyHistoryList, newHistory],
+      transactionsList: [...prevState.transactionsList, newHistory],
       amountInput: '',
       titleInput: '',
-      typeChoosen: 'Income',
+      typeChoosen: 'INCOME',
     }))
   }
 
   deleteHistory = id => {
-    const {moneyHistoryList} = this.state
-    const filteredHistory = moneyHistoryList.filter(
+    const {transactionsList} = this.state
+    const filteredTransaction = transactionsList.filter(
       eachHistory => eachHistory.id !== id,
     )
-    this.setState({moneyHistoryList: filteredHistory})
+    this.setState({transactionsList: filteredTransaction})
   }
 
   getTitleInput = event => {
@@ -66,10 +66,10 @@ class MoneyManager extends Component {
 
   getIncome = () => {
     let income = 0
-    const {moneyHistoryList} = this.state
-    moneyHistoryList.forEach(eachHistory => {
-      if (eachHistory.type === 'Income') {
-        income += parseInt(eachHistory.amount)
+    const {transactionsList} = this.state
+    transactionsList.forEach(eachHistory => {
+      if (eachHistory.type === 'INCOME') {
+        income += eachHistory.amount
       }
     })
     return income
@@ -77,10 +77,10 @@ class MoneyManager extends Component {
 
   getExpenses = () => {
     let expenses = 0
-    const {moneyHistoryList} = this.state
-    moneyHistoryList.forEach(eachHistory => {
-      if (eachHistory.type === 'Expenses') {
-        expenses += parseInt(eachHistory.amount)
+    const {transactionsList} = this.state
+    transactionsList.forEach(eachHistory => {
+      if (eachHistory.type === 'EXPENSES') {
+        expenses += eachHistory.amount
       }
     })
     return expenses
@@ -90,12 +90,12 @@ class MoneyManager extends Component {
     let income = 0
     let expenses = 0
     let balance = 0
-    const {moneyHistoryList} = this.state
-    moneyHistoryList.forEach(eachHistory => {
-      if (eachHistory.type === 'Income') {
-        income += parseInt(eachHistory.amount)
+    const {transactionsList} = this.state
+    transactionsList.forEach(eachHistory => {
+      if (eachHistory.type === 'INCOME') {
+        income += eachHistory.amount
       } else {
-        expenses += parseInt(eachHistory.amount)
+        expenses += eachHistory.amount
       }
     })
     balance = income - expenses
@@ -103,7 +103,7 @@ class MoneyManager extends Component {
   }
 
   render() {
-    const {titleInput, amountInput, typeChoosen, moneyHistoryList} = this.state
+    const {titleInput, amountInput, transactionsList} = this.state
     const balanceAmount = this.getBalance()
     const incomeAmount = this.getIncome()
     const expensesAmount = this.getExpenses()
@@ -148,13 +148,9 @@ class MoneyManager extends Component {
               <label className="text-trans" htmlFor="Type">
                 TYPE
               </label>
-              <select
-                value={typeChoosen}
-                onChange={this.getTypeChoosen}
-                className="input-size"
-              >
+              <select onChange={this.getTypeChoosen} className="input-size">
                 {transactionTypeOptions.map(eachType => (
-                  <option value={eachType.displayText} key={eachType.optionId}>
+                  <option value={eachType.optionId} key={eachType.optionId}>
                     {eachType.displayText}
                   </option>
                 ))}
@@ -175,7 +171,7 @@ class MoneyManager extends Component {
                 </div>
                 <hr className="separator" />
               </li>
-              {moneyHistoryList.map(eachHistory => (
+              {transactionsList.map(eachHistory => (
                 <TransactionItem
                   deleteHistory={this.deleteHistory}
                   transactionDetails={eachHistory}

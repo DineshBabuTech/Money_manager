@@ -10,11 +10,15 @@ const TransactionItem = props => {
     <li className="header1">
       <div className="header-cell1">
         <p>{title}</p>
-        <p>{amount}</p>
+        <p>Rs {amount}</p>
         <p>{type}</p>
-        <button onClick={removeHistory} type="button" className="delete-btn">
+        <button
+          data-testid="delete"
+          onClick={removeHistory}
+          type="button"
+          className="delete-btn"
+        >
           <img
-            data-testid="delete"
             className="d-img"
             src="https://assets.ccbp.in/frontend/react-js/money-manager/delete.png"
             alt="delete"
